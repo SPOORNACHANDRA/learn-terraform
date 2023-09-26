@@ -45,6 +45,10 @@ output "fruits_first" {
   value = var.fruits[0]
 }
 
+output "fruits_second" {
+  value = var.fruits[1]
+}
+
 
 
 
