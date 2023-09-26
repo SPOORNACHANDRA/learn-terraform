@@ -59,13 +59,27 @@ output "fruit_stock_with_price_of_apple" {
 }
 
 
+# variable datatypes
+variable "fruit_details" {
+  default = {
+    apple = {
+      stock    = 100  #number
+      type     = "washington" #string
+      for_sale = true # boolean
+      banana   = {
+        stock    = 500  #number
+        type     = "nyc" #string
+        for_sale = true # boolean
+      }
+    }
+  }
+}
 
+  # variable ina acombination of any other string then it needs to be within ${}
 
-
-
-
-
-
+  output "fruit_details_apple" {
+    value = "apple_stock = ${var.fruit_details["apple"].stock}, apple_type = ${var.fruit_details["apple"].type}, apple_status = ${var.fruit_details["apple"].for_sale},"
+  }
 
 
 
