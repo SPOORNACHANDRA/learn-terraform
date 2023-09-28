@@ -29,9 +29,6 @@ variable "components" {
 
 
 
-
-
-
 resource "aws_instance" "instances" {
   for_each               = var.components
   ami                    = var.ami
