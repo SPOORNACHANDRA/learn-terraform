@@ -19,7 +19,7 @@ variable "component" {
       name = "catalogue_sg"
     }
     mon = {
-      name = "mongodb"
+      name = "mongodb_sg"
     }
   }
 }
