@@ -1,0 +1,69 @@
+variable "ami" {
+  default = "ami-03265a0778a880afb"
+}
+variable "security_group" {
+  default = [ "sg-0d8a6e86b202c9281" ]
+}
+variable "instance_type" {
+  default = "t3.small"
+}
+variable "zone_id" {
+  default = "Z10339591VMISYKRO12LN"
+}
+
+variable "components" {
+  default = {
+    frontend = {}
+    catalogue = {}
+    mongodb = {}
+    user = {}
+    redis = {}
+    cart = {}
+    mysql = {}
+    shipping = {}
+    payment = {}
+    rabbitmq = {}
+
+  }
+}
+
+
+
+
+
+
+resource "aws_instance" "instances" {
+  for_each               = var.components
+  ami                    = var.ami
+  instance_type          = var.instance_type
+  vpc_security_group_ids = var.security_group
+  tags                   = {
+    Name = lookup(var.components, each.key, null)
+  }
+}
+
+#resource "aws_route53_record" "record" {
+#  for_each = var.components
+#  zone_id = var.zone_id
+#  name    = "frontend-dev.poornadevops.online"
+#  type    = "A"
+#  ttl     = 30
+#  records = [lookup(aws_instance.instances,each.key )]
+#}
+
+
+output "instances" {
+  value = aws_instance.instances
+}
+
+
+
+
+
+
+
+
+
+
+
+
