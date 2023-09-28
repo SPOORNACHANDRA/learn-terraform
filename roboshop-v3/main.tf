@@ -38,20 +38,20 @@ resource "aws_instance" "instances" {
     Name = lookup(var.components,each.value["name"],null)
   }
 }
-#
-#resource "aws_route53_record" "record" {
-#  for_each = var.components
-#  zone_id = var.zone_id
-#  name    = "${lookup(each.value,"name",null )}.poornadevops.online"
-#  type    = "A"
-#  ttl     = 30
-#  records = [lookup(each.key,"name",null )]
-#}
-#
-#
-#output "instances" {
-#  value = aws_instance.instances
-#}
+
+resource "aws_route53_record" "record" {
+  for_each = var.components
+  zone_id = var.zone_id
+  name    = "${lookup(each.value,"name",null )}.poornadevops.online"
+  type    = "A"
+  ttl     = 30
+  records = [lookup(lookup(aws_instance.instances,each.key,null),"private_ip",null)]
+}
+
+
+output "instances" {
+  value = aws_instance.instances
+}
 
 
 
