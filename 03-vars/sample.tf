@@ -76,7 +76,7 @@ variable "fruit_details" {
   }
 }
 
-  # variable ina acombination of any other string then it needs to be within ${}
+  # variable in a combination of any other string then it needs to be within ${}
 
 output "fruit_name_1" {
   value = "fruitname = ${var.fruit_name}"

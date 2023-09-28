@@ -35,23 +35,23 @@ resource "aws_instance" "instances" {
   instance_type          = var.instance_type
   vpc_security_group_ids = var.security_group
   tags                   = {
-    Name = lookup(each.value,"name",null)
+    Name = lookup(var.components,each.value["name"],null)
   }
 }
-
+#
 #resource "aws_route53_record" "record" {
 #  for_each = var.components
 #  zone_id = var.zone_id
-#  name    = "frontend-dev.poornadevops.online"
+#  name    = "${lookup(each.value,"name",null )}.poornadevops.online"
 #  type    = "A"
 #  ttl     = 30
-#  records = [lookup(aws_instance.instances,each.key )]
+#  records = [lookup(each.key,"name",null )]
 #}
-
-
-output "instances" {
-  value = aws_instance.instances
-}
+#
+#
+#output "instances" {
+#  value = aws_instance.instances
+#}
 
 
 
