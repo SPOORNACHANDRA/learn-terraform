@@ -38,7 +38,7 @@ resource "aws_instance" "instances" {
   instance_type          = var.instance_type
   vpc_security_group_ids = var.security_group
   tags                   = {
-    Name = lookup(var.components, each.key, null)
+    Name = lookup(each.key,null)
   }
 }
 
