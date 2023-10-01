@@ -5,6 +5,9 @@ resource "aws_instance" "instances" {
   tags                   = {
     Name = var.name
   }
+  provisioner "local-exec" {
+    command = "sleep 60"
+  }
 }
 
 resource "aws_route53_record" "record" {
