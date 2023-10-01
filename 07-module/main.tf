@@ -3,6 +3,6 @@ module "test" {
 }
 
 
-output "ami" {
+output "test" {
   value = module.test
 }
