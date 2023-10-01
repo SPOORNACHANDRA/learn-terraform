@@ -1,12 +1,15 @@
 variable "ami" {
   default = "ami-03265a0778a880afb"
 }
+
 variable "security_group" {
   default = [ "sg-0d8a6e86b202c9281" ]
 }
+
 variable "instance_type" {
   default = "t3.small"
 }
+
 variable "zone_id" {
   default = "Z10339591VMISYKRO12LN"
 }
@@ -26,8 +29,6 @@ variable "components" {
 
   }
 }
-
-
 
 resource "aws_instance" "instances" {
   for_each               = var.components
