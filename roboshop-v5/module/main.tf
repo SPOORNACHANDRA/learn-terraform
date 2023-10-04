@@ -15,6 +15,8 @@ resource "aws_route53_record" "record" {
   ttl     = 30
   records = [aws_instance.instances.private_ip]
 }
+
+
 resource "null_resource" "ansible" {
   depends_on = [
   aws_route53_record.record
