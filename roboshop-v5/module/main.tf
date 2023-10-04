@@ -18,6 +18,7 @@ resource "aws_route53_record" "record" {
 
 
 resource "null_resource" "ansible" {
+
   depends_on = [
   aws_route53_record.record
   ]
@@ -25,7 +26,7 @@ resource "null_resource" "ansible" {
     command = <<EOF
 cd /home/centos/roboshop-ansible
 git pull
-sleep 40
+sleep 30
 ansible-playbook -i ${var.name}-dev.poornadevops.online, main.yml -e ansible_user=centos -e ansible_password=DevOps321 -e component=${var.name}
 EOF
   }
