@@ -9,11 +9,11 @@ variable "security_groups" {
 variable "components" {
   default = {
     frontend={
-      name= "web"
+      name= "frontend"
       instance_type= "t3.micro"
     }
     cart={
-      name= "app"
+      name= "mongodb"
       instance_type= "t3.micro"
     }
   }
