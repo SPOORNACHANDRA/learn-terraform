@@ -1,3 +1,5 @@
+# this is not prefered in real time bcz tommorrow if another type of subnet come in the picture you need to go inside the module you write one more local you need to touch minimal whatever you give it shouldn't break the code
+
 variable "vpc" {
   default = {
     main = {
