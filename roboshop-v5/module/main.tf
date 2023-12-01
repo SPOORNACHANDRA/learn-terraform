@@ -13,7 +13,7 @@ resource "aws_route53_record" "record" {
   name    = "${var.name}-dev.poornadevops.online"
   type    = "A"
   ttl     = 30
-  records = [aws_instance.instances.private_ip]
+  records = [aws_instance.instances.private_ip.]
 }
 
 
@@ -30,7 +30,6 @@ ansible-playbook -i ${var.name}-dev.poornadevops.online, main.yml -e ansible_use
 EOF
   }
 }
-#
 
 
 
