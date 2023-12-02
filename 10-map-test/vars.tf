@@ -20,7 +20,6 @@ variable "vpc" {
       }
     }
   }
-
 }
 locals {
   public = {for k,v in merge(var.vpc["main"]["subnets"]["public"]): k => v}
