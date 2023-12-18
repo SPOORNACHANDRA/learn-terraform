@@ -1,5 +1,5 @@
 variable "zone_id" {
-  default = "Z07367993464WPX4UVN8D"
+  default = "Z07143353VCC4QLIJE3K9"
 }
 
 variable "security_groups" {
