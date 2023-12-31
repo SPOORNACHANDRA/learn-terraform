@@ -1,14 +1,14 @@
 resource "aws_instance" "frontend" {
   ami           = "ami-03265a0778a880afb"
   instance_type = "t3.small"
-  vpc_security_group_ids = [ "sg-0d8a6e86b202c9281" ]
+  vpc_security_group_ids = [ "sg-0577c0c4fa7613b87" ]
 
   tags = {
     Name = "frontend"
   }
 }
 resource "aws_route53_record" "frontend" {
-  zone_id = "Z10339591VMISYKRO12LN"
+  zone_id = "Z095093821BU1FHHF63BW"
   name    = "frontend-dev.poornadevops.online"
   type    = "A"
   ttl     = 30
@@ -17,13 +17,13 @@ resource "aws_route53_record" "frontend" {
 resource "aws_instance" "mongodb" {
   ami           = "ami-03265a0778a880afb"
   instance_type = "t3.small"
-  vpc_security_group_ids = [ "sg-0d8a6e86b202c9281" ]
+  vpc_security_group_ids = [ "sg-0577c0c4fa7613b87" ]
   tags = {
     Name = "mongodb"
   }
 }
 resource "aws_route53_record" "mongodb" {
-  zone_id = "Z10339591VMISYKRO12LN"
+  zone_id = "Z095093821BU1FHHF63BW"
   name    = "mongodb-dev.poornadevops.online"
   type    = "A"
   ttl     = 30
@@ -33,13 +33,13 @@ resource "aws_route53_record" "mongodb" {
 resource "aws_instance" "catalogue" {
   ami           = "ami-03265a0778a880afb"
   instance_type = "t3.small"
-  vpc_security_group_ids = [ "sg-0d8a6e86b202c9281" ]
+  vpc_security_group_ids = [ "sg-0577c0c4fa7613b87" ]
   tags = {
     Name = "catalogue"
   }
 }
 resource "aws_route53_record" "catalogue" {
-  zone_id = "Z10339591VMISYKRO12LN"
+  zone_id = "Z095093821BU1FHHF63BW"
   name    = "catalogue-dev.poornadevops.online"
   type    = "A"
   ttl     = 30
@@ -49,13 +49,13 @@ resource "aws_route53_record" "catalogue" {
 resource "aws_instance" "redis" {
   ami           = "ami-03265a0778a880afb"
   instance_type = "t3.small"
-  vpc_security_group_ids = [ "sg-0d8a6e86b202c9281" ]
+  vpc_security_group_ids = [ "sg-0577c0c4fa7613b87" ]
   tags = {
     Name = "redis"
   }
 }
 resource "aws_route53_record" "redis" {
-  zone_id = "Z10339591VMISYKRO12LN"
+  zone_id = "Z095093821BU1FHHF63BW"
   name    = "redis-dev.poornadevops.online"
   type    = "A"
   ttl     = 30
@@ -65,13 +65,13 @@ resource "aws_route53_record" "redis" {
 resource "aws_instance" "cart" {
   ami           = "ami-03265a0778a880afb"
   instance_type = "t3.small"
-  vpc_security_group_ids = [ "sg-0d8a6e86b202c9281" ]
+  vpc_security_group_ids = [ "sg-0577c0c4fa7613b87" ]
   tags = {
     Name = "cart"
   }
 }
 resource "aws_route53_record" "cart" {
-  zone_id = "Z10339591VMISYKRO12LN"
+  zone_id = "Z095093821BU1FHHF63BW"
   name    = "cart-dev.poornadevops.online"
   type    = "A"
   ttl     = 30
@@ -80,13 +80,13 @@ resource "aws_route53_record" "cart" {
 resource "aws_instance" "user" {
   ami           = "ami-03265a0778a880afb"
   instance_type = "t3.small"
-  vpc_security_group_ids = [ "sg-0d8a6e86b202c9281" ]
+  vpc_security_group_ids = [ "sg-0577c0c4fa7613b87" ]
   tags = {
     Name = "user"
   }
 }
 resource "aws_route53_record" "user" {
-  zone_id = "Z10339591VMISYKRO12LN"
+  zone_id = "Z095093821BU1FHHF63BW"
   name    = "user-dev.poornadevops.online"
   type    = "A"
   ttl     = 30
@@ -96,13 +96,13 @@ resource "aws_route53_record" "user" {
 resource "aws_instance" "mysql" {
   ami           = "ami-03265a0778a880afb"
   instance_type = "t3.small"
-  vpc_security_group_ids = [ "sg-0d8a6e86b202c9281" ]
+  vpc_security_group_ids = [ "sg-0577c0c4fa7613b87" ]
   tags = {
     Name = "mysql"
   }
 }
 resource "aws_route53_record" "mysql" {
-  zone_id = "Z10339591VMISYKRO12LN"
+  zone_id = "Z095093821BU1FHHF63BW"
   name    = "mysql-dev.poornadevops.online"
   type    = "A"
   ttl     = 30
@@ -111,13 +111,13 @@ resource "aws_route53_record" "mysql" {
 resource "aws_instance" "shipping" {
   ami           = "ami-03265a0778a880afb"
   instance_type = "t3.small"
-  vpc_security_group_ids = [ "sg-0d8a6e86b202c9281" ]
+  vpc_security_group_ids = [ "sg-0577c0c4fa7613b87" ]
   tags = {
     Name = "shipping"
   }
 }
 resource "aws_route53_record" "shipping" {
-  zone_id = "Z10339591VMISYKRO12LN"
+  zone_id = "Z095093821BU1FHHF63BW"
   name    = "shipping-dev.poornadevops.online"
   type    = "A"
   ttl     = 30
@@ -126,13 +126,13 @@ resource "aws_route53_record" "shipping" {
 resource "aws_instance" "rabbitmq" {
   ami           = "ami-03265a0778a880afb"
   instance_type = "t3.small"
-  vpc_security_group_ids = [ "sg-0d8a6e86b202c9281" ]
+  vpc_security_group_ids = [ "sg-0577c0c4fa7613b87" ]
   tags = {
     Name = "rabbitmq"
   }
 }
 resource "aws_route53_record" "rabbitmq" {
-  zone_id = "Z10339591VMISYKRO12LN"
+  zone_id = "Z095093821BU1FHHF63BW"
   name    = "rabbitmq-dev.poornadevops.online"
   type    = "A"
   ttl     = 30
@@ -142,13 +142,13 @@ resource "aws_route53_record" "rabbitmq" {
 resource "aws_instance" "payment" {
   ami           = "ami-03265a0778a880afb"
   instance_type = "t3.small"
-  vpc_security_group_ids = [ "sg-0d8a6e86b202c9281" ]
+  vpc_security_group_ids = [ "sg-0577c0c4fa7613b87" ]
   tags = {
     Name = "payment"
   }
 }
 resource "aws_route53_record" "payment" {
-  zone_id = "Z10339591VMISYKRO12LN"
+  zone_id = "Z095093821BU1FHHF63BW"
   name    = "payment-dev.poornadevops.online"
   type    = "A"
   ttl     = 30
